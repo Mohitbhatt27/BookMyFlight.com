@@ -7,7 +7,7 @@ class CityService {
 
     async createCity (data) {
         try {
-            const city = await this.cityRepository.createCity(data);
+            const city = await this.cityRepository.createCity({name: data.name});
             return city;
         } catch (error) {
             console.log("Some error occured in service while creating city");
@@ -18,6 +18,7 @@ class CityService {
     async deleteCity (cityId) {
         try {
             const response = await this.cityRepository.deleteCity(cityId);
+            return response;
         } catch (error) {
             console.log("Some error occured in service while deleting city");
             throw {error};
