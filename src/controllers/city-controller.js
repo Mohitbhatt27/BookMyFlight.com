@@ -107,6 +107,18 @@ const get = async (req, res) => {
   }
 };
 
+/*
+ * GET request
+ * query -> req.query
+ * query params -> req.query.name
+ * query limit -> req.query.limit
+ * query offset -> req.query.offset
+ * query sort -> req.query.sort
+ * query order -> req.query.order
+ * query attributes -> req.query.attributes
+ * query group -> req.query.group
+ */
+
 const getAll = async (req, res) => {
   try {
     const response = await cityService.getAllCities(req.query);
